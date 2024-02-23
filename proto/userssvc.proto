@@ -26,10 +26,13 @@ message GetUserRequest {
 
 
 message User {
+    uint64 id =11;
     string email = 1;
     string phone =2;
     bool emailVerified = 3;
     bool phoneVerified = 4;
+    string ucc =5;
+    string panNumber =6;
 }
 message Data {
     User user = 1;
