@@ -1,4 +1,4 @@
-module torusprotos
+module github.com/greyaxis/torusprotos
 
 go 1.21.6
 

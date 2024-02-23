@@ -35,7 +35,7 @@ func NewUserSvcClient(cc grpc.ClientConnInterface) UserSvcClient {
 
 func (c *userSvcClient) GetUser(ctx context.Context, in *GetUserRequest, opts ...grpc.CallOption) (*GetUserResponse, error) {
 	out := new(GetUserResponse)
-	err := c.cc.Invoke(ctx, "/users.UserSvc/GetUser", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/usersproto.UserSvc/GetUser", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _UserSvc_GetUser_Handler(srv interface{}, ctx context.Context, dec func(int
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/users.UserSvc/GetUser",
+		FullMethod: "/usersproto.UserSvc/GetUser",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(UserSvcServer).GetUser(ctx, req.(*GetUserRequest))
@@ -92,7 +92,7 @@ func _UserSvc_GetUser_Handler(srv interface{}, ctx context.Context, dec func(int
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var UserSvc_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "users.UserSvc",
+	ServiceName: "usersproto.UserSvc",
 	HandlerType: (*UserSvcServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
