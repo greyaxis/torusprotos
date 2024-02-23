@@ -14,7 +14,7 @@
 
 syntax = "proto3";
 package usersproto;
-option go_package = "/users";
+option go_package = "/usersproto";
 
 
 
